@@ -9,7 +9,7 @@
     android:background="@drawable/mulai">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tVjudul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

@@ -12,6 +12,9 @@
         android:theme="@style/Theme.PemesananHotel"
         tools:targetApi="31">
         <activity
+            android:name=".DetailTreatment"
+            android:exported="false" />
+        <activity
             android:name=".PilihTreatment"
             android:exported="false" />
         <activity
