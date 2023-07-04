@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backlogin"
     android:padding="40dp"
-    tools:context=".Register">
+    tools:context=".Register"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_marginTop="210dp"
         android:fontFamily="cursive"
-        android:text="Hello Girls!"
+        android:text="Welcome Back!"
         android:textColor="@color/black"
         android:textSize="35sp" />
 
@@ -23,9 +24,8 @@
         android:id="@+id/createacc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/welcome"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
         android:text="Let's Create Your Account!"
         android:fontFamily="sans-serif-light"
         android:textSize="15sp"
@@ -34,7 +34,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="290dp"
+        android:layout_marginTop="20dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -49,7 +49,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="355dp"
+        android:layout_marginTop="20dp"
         app:passwordToggleEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
@@ -67,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="70dp"
         android:width="300dp"
         android:fontFamily="sans-serif-black"
         android:background="@drawable/round_btn"
@@ -100,4 +100,4 @@
 
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
