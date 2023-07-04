@@ -9,8 +9,7 @@ import androidx.core.view.GestureDetectorCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.IOException;
-// ini untuk item di recycler viewnya untuk click adapternya
-// ini gausah disentuh apa" udh bs kerja
+
 public class RecyclerItemClickListener extends RecyclerView.SimpleOnItemTouchListener{
 
     OnItemClickListener clickListener;

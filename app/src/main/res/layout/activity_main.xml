@@ -18,8 +18,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/dashboard" />
 
-
-
     <TextView
         android:id="@+id/tV1"
         android:layout_width="wrap_content"
