@@ -17,42 +17,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PilihTreatment extends AppCompatActivity {
-    // 3. Pilih treatment
     //pilih treatment ada recycler view
     RecyclerView treatmentListRecycler;
-    // pilih treatment harus ada daftar dari treatment"
     List<Treatment> treatmentListData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pilih_treatment);
-        initialize();//initialize cek functionnya
+        initialize();
     }
 
     void initialize(){
-        //cari viewnya masukin ke variabel
         treatmentListRecycler = findViewById(R.id.recyclerTreatmentList);
-        //kita udh buat variabel list tapi variabelnya masih NULL
-        //jadi kita set bahwa listnya adalah list kosong
-        treatmentListData = new ArrayList<>();// new ArrayList<>() artinya list kosong
+        treatmentListData = new ArrayList<>();
         generateTreatment();// generate tratment untuk generasi treatment
-        treatmentListRecycler.setAdapter(new TreatmentAdapter(treatmentListData));
-        // adapter buat recycler view adapternya kita buat sendiri di treatmentadapter
+        treatmentListRecycler.setAdapter(new TreatmentAdapter(treatmentListData)); //adapter recyclerview
         treatmentListRecycler.addOnItemTouchListener(new RecyclerItemClickListener(treatmentListRecycler, new RecyclerItemClickListener.OnItemClickListener() {
-            //buat onclick untuk setiap item di recycler view, onclicknya kita buat sendiri di RecyclerItemClickListener
             @Override
-            public void onItemClick(View inView, int inPosition) throws IOException {
-                //kalo diclick ya menuju detail treatment yaitu informasi treatmentnya
+            public void onItemClick(View inView, int inPosition) throws IOException { //onclick ke detail treatment
                 Intent toDetailTreatment = new Intent(PilihTreatment.this,DetailTreatment.class);
                 toDetailTreatment.putExtra("data",treatmentListData.get(inPosition));
-                // taro treatment yg dipilih kita passing ke layar selanjutnya
                 startActivity(toDetailTreatment);//intent
             }
         }));
     }
-    void generateTreatment(){
-        // ini treatmentnya lu taro datanya sini mau tambah tinggal .add()
+    void generateTreatment(){ //data treatment untuk dipasing ke detail treatment
         treatmentListData.add(new Treatment("0","Hair Cut",
                 "https://hollandaputri.files.wordpress.com/2023/06/2.png?w=500",
                 "Layanan potong rambut yang dilakukan oleh para ahli tata rambut di True Beauty Salon dengan teknik pemotongan yang presisi dan gaya potongan yang sesuai dengan kepribadian dan sesuai dengan keinginan Anda",

@@ -17,8 +17,7 @@ import com.example.pemesanansalon.R;
 import com.example.pemesanansalon.model.Reservasi;
 
 import java.util.List;
-// adapter buat reservasi, harusnya kelen udh bljr ini, kalau belum mana bs buat recycler view
-// harusnya udh tau cara buat
+
 public class ReservasiAdapter extends RecyclerView.Adapter<ReservasiAdapter.ReservasiListViewHolder>{
     public static final int MODE_PRIVATE = 0x0000;
     List<Reservasi> reservasiList;
@@ -41,7 +40,6 @@ public class ReservasiAdapter extends RecyclerView.Adapter<ReservasiAdapter.Rese
     public int getItemCount() {
         return  reservasiList.size();
     }
-    // semua UI dari itemnya set disini
     public class ReservasiListViewHolder extends RecyclerView.ViewHolder {
         TextView namaTextView;
         TextView emailTextView;

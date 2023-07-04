@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.example.pemesanansalon.model.Treatment;
 
 public class DetailTreatment extends AppCompatActivity {
-    //4. ini tampilih semua data treatment doang
     Treatment chosenTreatment;
     TextView titleTextView;
     TextView typeTextView;
@@ -23,27 +22,26 @@ public class DetailTreatment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_treatment);
-        initialize();//initialize cek function
-        bookButton.setOnClickListener(new View.OnClickListener() {//kalo button book ditekan
+        initialize();
+        bookButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                //kalau ditekan ya menuju ke form
+            public void onClick(View view) {// onclick menuju form
                 Intent toReservationForm = new Intent(DetailTreatment.this,FormDaftarReservasi.class);
-                toReservationForm.putExtra("data",chosenTreatment);// treatment yg dipilih kita passing lagi
-                startActivity(toReservationForm);//intent
+                toReservationForm.putExtra("data",chosenTreatment);
+                startActivity(toReservationForm);
             }
         });
     }
 
-    void initialize(){//isi semua view masukin ke variabel
+    void initialize(){
         titleTextView = findViewById(R.id.treatmentDetailsTitleTextView);
         typeTextView = findViewById(R.id.treatmentDetailsTypeTextView);
         durationTextView = findViewById(R.id.treatmentDetailsDurationTextView);
         descriptionTextView = findViewById(R.id.treatmentDetailsDescriptionTextView);
         bookButton = findViewById(R.id.bookButton);
-        //ambil data yang tadi dipassing yaitu treatment yg dipilih
+
+        //ambil data dari pilih treatmen tadi untuk ditampilkan
         chosenTreatment = (Treatment) getIntent().getSerializableExtra("data");
-        // taro semua datanya ke view
         titleTextView.setText(String.format("Treatment : %s",chosenTreatment.getJudulTreatment()));
         typeTextView.setText(String.format("Jenis Treatment : %s",chosenTreatment.getJenisTreatment()));
         durationTextView.setText(String.format("Durasi : %d jam",chosenTreatment.getDurasiJamTreatment()));

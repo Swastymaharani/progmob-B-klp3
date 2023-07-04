@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReservasiSaya extends AppCompatActivity {
-    // 6. Reservasi saya
     SQLiteDatabase mydatabase;
     RecyclerView reservasiListRecyclerView;
     List<Reservasi> reservasiList;
@@ -23,25 +22,23 @@ public class ReservasiSaya extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservasi_saya);
-        initialize();// initialize cek function
+        initialize();
     }
-    void initialize(){// mauskin UI ke variable
+
+    void initialize(){
         reservasiListRecyclerView = findViewById(R.id.recyclerReservasiList);
-        loadDatabase();// kita ambil data dri database dulu cek function load database
+        loadDatabase();// load database untuk ambil datanya
         reservasiListRecyclerView.setAdapter(new ReservasiAdapter(reservasiList));// set reservasi adapter
     }
 
     void loadDatabase(){
         // konek database
         mydatabase = openOrCreateDatabase("reservasi",MODE_PRIVATE,null);
-        // buat tabel database kalau belumada
+        //buat tabelnnya jika belum ada
         mydatabase.execSQL("CREATE TABLE IF NOT EXISTS tabelReservasi(" +
                 "email VARCHAR,nama VARCHAR,telepon VARCHAR, waktuReservasi VARCHAR,tanggalReservasi VARCHAR,tipeTreatment VARCHAR);");
-        //buat list kosong
         reservasiList = new ArrayList<>();
-        //kita query data
         Cursor resultSet = mydatabase.rawQuery("Select * from tabelReservasi",null);
-        //1 per satu table yg kita dapat hasilnya kita jadiin variabel reservasi
         for(int i=0;i<resultSet.getCount();i++){
             resultSet.moveToPosition(i);
             String email = resultSet.getString(0);
@@ -51,6 +48,7 @@ public class ReservasiSaya extends AppCompatActivity {
             String tanggalReservasi = resultSet.getString(4);
             String tipeTreatment = resultSet.getString(5);
             int durasiTreatment = Integer.parseInt(resultSet.getString(6));
+
             //datanya diambil semua masukin jadi reservasi
             Reservasi reservasiBaru = new Reservasi(email,nama,telepon,waktuReservasi,tanggalReservasi,tipeTreatment,durasiTreatment);
             //masukin ke daftar reservasi

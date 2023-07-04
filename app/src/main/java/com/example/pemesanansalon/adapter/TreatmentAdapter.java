@@ -14,7 +14,7 @@ import com.example.pemesanansalon.model.Treatment;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-// sama kayak reservasi adapter
+
 public class TreatmentAdapter extends RecyclerView.Adapter<TreatmentAdapter.TreatmentListViewHolder> {
     List<Treatment> treatmentList;
 
