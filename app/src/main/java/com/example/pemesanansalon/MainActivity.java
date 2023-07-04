@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         hubungiKamiCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String text = "Saya%20mau%20bertanya%20/%20konfirmasi%20tentang%20Pemesanan%20Salon!";
+                String text = "Halo%20Saya%20mau%20/%20bertanya%20tentang%20reservasi%20treatment";
                 String url = String.format("https://wa.me/+6283115480979?text=%s",text);
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
