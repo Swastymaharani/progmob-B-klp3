@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "689552838635",
+    "project_id": "progmob-b-klp3",
+    "storage_bucket": "progmob-b-klp3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:689552838635:android:ce0805d1cb1d7ecba113ae",
+        "android_client_info": {
+          "package_name": "com.example.pemesanansalon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "689552838635-67g68ckdnv6avuedu2r8s8kll5ljjar7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG5HB2uqb9fC0zK-3H3dp3naYDIJ4EWj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "689552838635-67g68ckdnv6avuedu2r8s8kll5ljjar7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
